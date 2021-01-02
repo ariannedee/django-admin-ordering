@@ -6,7 +6,7 @@ from testapp import models
 
 class Child1Inline(OrderableAdmin, admin.TabularInline):
     model = models.Child1
-    ordering_field = "ordering"
+    ordering_field = "number"
 
 
 admin.site.register(models.Parent1, inlines=[Child1Inline])
@@ -14,7 +14,7 @@ admin.site.register(models.Parent1, inlines=[Child1Inline])
 
 class Child2Inline(OrderableAdmin, admin.TabularInline):
     model = models.Child2
-    ordering_field = "ordering"
+    ordering_field = "number"
 
 
 admin.site.register(models.Parent2, inlines=[Child2Inline])
@@ -22,12 +22,12 @@ admin.site.register(models.Parent2, inlines=[Child2Inline])
 
 class Child3Inline(OrderableAdmin, admin.TabularInline):
     model = models.Child3
-    ordering_field = "ordering"
+    ordering_field = "number"
 
 
 class Child3InlineOther(OrderableAdmin, admin.TabularInline):
     model = models.Child3
-    ordering_field = "ordering"
+    ordering_field = "number"
 
 
 admin.site.register(models.Parent3, inlines=[Child3Inline, Child3InlineOther])

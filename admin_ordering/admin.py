@@ -15,7 +15,7 @@ __all__ = ("OrderableAdmin",)
 
 
 class OrderableAdmin(BaseModelAdmin):
-    ordering_field = "ordering"
+    ordering_field = "number"
     ordering_field_hide_input = False
     extra = 0
 

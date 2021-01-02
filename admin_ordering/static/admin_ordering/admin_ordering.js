@@ -48,7 +48,7 @@ django.jQuery(function ($) {
       var inputFieldSelector = 'input[name$="-' + data.field + '"]';
 
       function updateOrdering(nodes) {
-        var incOrdering = 10;
+        var incOrdering = 1;
         var maxOrdering = nodes.length * incOrdering;
         nodes.each(function (index) {
           var row = $(this);

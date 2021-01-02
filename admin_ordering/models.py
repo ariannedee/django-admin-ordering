@@ -4,16 +4,16 @@ from django.utils.translation import gettext_lazy as _
 
 
 class OrderableModel(models.Model):
-    ordering = models.PositiveIntegerField(_("ordering"), default=0)
+    number = models.PositiveIntegerField(_("number"), default=0)
 
     class Meta:
         abstract = True
-        ordering = ["ordering"]
+        ordering = ["number"]
 
     def save(self, *args, **kwargs):
-        if not self.ordering:
-            max = self.__class__._default_manager.aggregate(m=Max("ordering"))["m"]
-            self.ordering = 10 + (max or 0)
+        if not self.number:
+            max = self.__class__._default_manager.aggregate(m=Max("number"))["m"]
+            self.number = 1 + (max or 0)
         super(OrderableModel, self).save(*args, **kwargs)
 
     save.alters_data = True

@@ -69,11 +69,11 @@ class OrderableAdminTest(TestCase):
 
     def test_orderable_model(self):
         obj = Orderable.objects.create()
-        self.assertEqual(obj.ordering, 10)
+        self.assertEqual(obj.number, 1)
 
         obj = Orderable.objects.create()
-        self.assertEqual(obj.ordering, 20)
+        self.assertEqual(obj.number, 2)
 
-        Orderable.objects.create(ordering=42)
+        Orderable.objects.create(number=42)
         obj = Orderable.objects.create()
-        self.assertEqual(obj.ordering, 52)
+        self.assertEqual(obj.number, 43)
